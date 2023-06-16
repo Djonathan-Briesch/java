@@ -2,40 +2,26 @@ import java.util.Scanner;
 
 public class ex008 {
     public static void main(String[] args) {
-        int num;
-        int num2;
-        int i = 0;
-        int i2 = 0;
-        int soma =0;
-        double resultado = 0;
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Escreva dois numeros para saber se eles sao amigaveis ou nao: ");
-        System.out.print("Numero 1: ");
-        num = entrada.nextInt();
-        System.out.print("Numero 2: ");
-        num2 = entrada.nextInt();
-        while (i < num) {
-            resultado = num % i;
-            if (resultado == 0) {
-                soma += i;
-            }
-            i++;
+        System.out.print("1º número: ");
+        int num1 = entrada.nextInt();
+        System.out.print("2º número: ");
+        int num2 = entrada.nextInt();
+        int soma1 = 0;
+        for (int i = 1; i < num1; i++) {
+            if (num1 % i == 0)
+                soma1 += i;
         }
-        while (i2 < num2) {
-            resultado = num % i2;
-            if (resultado == 0) {
-                soma += i2;
-            }
-            i2++;
+        int soma2 = 0;
+        for (int i = 1; i < num2; i++) {
+            if (num2 % i == 0)
+                soma2 += i;
         }
-        if (soma < num) {
-            System.out.println("Nao e um numero execivo!!!");
-        } else{
-            System.out.println("E um numero execivo!!!");
+        if ((soma1 == num2) && (soma2 == num1))
+            System.out.println(num1 + " e " + num2 + " são NÚMEROS AMIGÁVEIS");
+        else
+            System.out.println(num1 + " e " + num2 + " NÃO são NÚMEROS AMIGÁVEIS");
+            
+            entrada.close();
         }
-
-        entrada.close();
-    }
-    }
-
-
+}
